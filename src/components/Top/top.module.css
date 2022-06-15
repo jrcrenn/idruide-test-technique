@@ -1,0 +1,126 @@
+.topContainer {
+  height: 300px;
+  max-width: 900px;
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 300px;
+  padding: 32px 20px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 53%, rgba(42, 42, 42, 0.8) 100%);
+  filter: drop-shadow(0px 16px 48px rgba(0, 0, 0, 0.22));
+  transition: all 1s;
+}
+.infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 344px;
+}
+.infos h1 {
+  font-family: "Archivo Black";
+  font-size: 2em;
+  line-height: 40px;
+  text-transform: uppercase;
+  color: white;
+  margin: 20px 0;
+  width: 100%;
+  z-index: 2;
+}
+.year {
+  font-family: "Archivo";
+  font-weight: normal;
+  z-index: 2;
+}
+.btnContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1em;
+  z-index: 2;
+  width: 100%;
+}
+.img {
+  width: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.blurImg {
+  position: absolute;
+  width: 100%;
+  height: 600px;
+  left: 0%;
+  right: 0%;
+  top: 0px;
+  filter: blur(100px);
+  z-index: -1;
+}
+.btnSliderContainer {
+  z-index: 2;
+  position: absolute;
+  top: 200px;
+  right: 360px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.btnSliderContainer .btnSlider {
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+.btnSliderContainer .btnSlider:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+.active {
+  width: 8px;
+  background-color: #fff;
+  border-radius: 8px;
+  height: 40px !important;
+}
+.slideButton {
+  padding: 100px;
+}
+.plain {
+  padding: 8px 20px;
+  background: white;
+  color: #2a2a2a;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  font-family: "Archivo";
+  line-height: 20px;
+  transition: all 0.5s;
+}
+.plain:hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.8);
+}
+.empty {
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 8px 20px;
+  font-family: "Archivo";
+  font-size: 16px;
+  color: white;
+  background: none;
+  line-height: 20px;
+  transition: all 0.5s;
+}
+.empty:hover {
+  background: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}

@@ -1,0 +1,179 @@
+.header {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+}
+.header h1 {
+  z-index: 100;
+}
+.header h1:hover {
+  cursor: pointer;
+}
+.searchInput {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  width: 100%;
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  padding-left: 30px;
+}
+.searchInput::placeholder {
+  color: white;
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+.searchInput:active, .searchInput:focus {
+  outline: none;
+  background: #fff;
+  color: #000;
+}
+.searchInput:active ~ .icon, .searchInput:focus ~ .icon, .searchInput:active .searchInput::placeholder, .searchInput:focus .searchInput::placeholder {
+  color: #000 !important;
+}
+.inputContainer {
+  position: relative;
+  width: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.inputContainer .icon {
+  position: absolute;
+  margin-left: 2px;
+  color: #fff;
+}
+.suggestions {
+  width: 100%;
+  position: absolute;
+  height: 450px;
+  background-color: #fff;
+  top: 34px;
+  border-radius: 0 0 8px 8px !important;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.top p {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #9b9b9b;
+}
+.moreResult {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-decoration-line: underline;
+  border-radius: 0 0 8px 8px !important;
+  padding: 10px;
+  color: #9b9b9b;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+ /* IE and Edge */
+  scrollbar-width: none;
+  padding: 0;
+  gap: 1em;
+}
+.list::-webkit-scrollbar {
+  display: none;
+}
+.movieContainer {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.movieContainer:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+.movie {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: #fff;
+  width: 100%;
+}
+.movie:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+.movie:hover + .arrowIcon {
+  transform: translate(10px);
+}
+.movieImg {
+  width: 40px;
+  border-radius: 2px;
+}
+.movieInfos {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 290px;
+}
+.movieInfos h5 {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+}
+.movieInfos p {
+  margin: 0;
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #9b9b9b;
+}
+.arrowIcon {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: flex-end;
+  right: 10px;
+  position: absolute;
+  transition: transform 0.5s;
+}
+.arrowIcon:hover {
+  transform: translate(10px);
+}
