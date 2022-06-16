@@ -4,7 +4,6 @@ import Link from "next/link";
 import headerStyle from "./header.module.css";
 import { Search } from "baseui/icon";
 import { useState } from "react";
-import ArrowRight from "baseui/icon/arrow-right";
 import Image from "next/image";
 
 export default function Header() {
@@ -34,7 +33,6 @@ export default function Header() {
                 <p>{m.release_date ? m.release_date.split("-")[0] : "0000"}</p>
               </div>
             </li>
-            <ArrowRight className={headerStyle.arrowIcon} size={24} />
           </div>
         </Link>
       );
@@ -77,7 +75,7 @@ export default function Header() {
             {movies && movies.length > 0 ? (
               <ul className={headerStyle.list}>{generateElements()}</ul>
             ) : (
-              <p>No results.</p>
+              <p>Pas de résultats.</p>
             )}
             <div className={headerStyle.moreResult}>
               <Link href={`/search/${searchVal}`} onClick={() => setSearch("")}>
