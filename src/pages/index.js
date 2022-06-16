@@ -2,7 +2,6 @@ import MyCarousel from "../components/Carousel/carousel";
 import Top from "../components/Top/top";
 import Layout from "../components/Header/layout";
 import homeStyle from "./index.module.css";
-import api from "../config/config"
 
 export default function Home({ trend, last_released, top_rated }) {
   const top = trend.results.slice(0, 3);
@@ -25,13 +24,13 @@ export default function Home({ trend, last_released, top_rated }) {
 
 export async function getStaticProps() {
   const trend = await fetch(
-   api.tmdb.trend + `movie/week?` + api.key + `&language=fr`
+   `${process.env.trend}movie/week?api_key=${process.env.TMDB_API_KEY}&language=fr`
   );
   const lastReleased = await fetch(
-    api.tmdb.movie + `now_playing?` + api.key + `&language=fr`
+    `${process.env.movie}now_playing?api_key=${process.env.TMDB_API_KEY}&language=fr`
   );
   const topRated = await fetch(
-   api.tmdb.movie + `top_rated?` + api.key + `&language=fr`
+   `${process.env.movie}top_rated?api_key=${process.env.TMDB_API_KEY}&language=fr`
   );
   const data = await trend.json();
   const dataLastReleased = await lastReleased.json();

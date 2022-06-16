@@ -6,7 +6,6 @@ import { ProgressBar, SIZE } from "baseui/progress-bar";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import carouselStyle from "../carousel.module.css";
-import api from "../../../config/config"
 
 function convertMinutes(min) {
   let hours = min / 60;
@@ -27,7 +26,7 @@ export function Movie({ movie, duration }) {
     useEffect(() => {
       const getMovieDetails = async () => {
         const res = await fetch(
-          api.tmdb.movie + `${movie.id}?` + api.key + `&language=fr`
+          `${process.env.movie}${movie.id}?api_key=${process.env.TMDB_API_KEY}&language=fr`
         );
         const data = await res.json();
         setMovieDetails(data);
@@ -44,7 +43,7 @@ export function Movie({ movie, duration }) {
             <Image
               width={140}
               height={200}
-              src={api.image +`w500/${movieDetails.poster_path}`}
+              src={`${process.env.image}w500/${movieDetails.poster_path}`}
               className={carouselStyle.movieImg}
             />
           </Link>

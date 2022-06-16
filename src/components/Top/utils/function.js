@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import topStyle from "../top.module.css";
-import api from "../../../config/config"
 import Link from "next/link";
 
 export function Top({ top }) {
@@ -13,14 +12,14 @@ export function Top({ top }) {
         <div className={topStyle.blurBgImg}>
           <img
             className={topStyle.blurImg}
-            src={api.image +`original/${top.backdrop_path}`}
+            src={`${process.env.image}original/${top.backdrop_path}`}
           />
         </div>
         <div className={topStyle.content}>
           <div className={topStyle.infos}>
             <img
               className={topStyle.img}
-              src={api.image +`original/${top.backdrop_path}`}
+              src={`${process.env.image}original/${top.backdrop_path}`}
             />
             <h1>
               {top.title}{""}
