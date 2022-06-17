@@ -30,7 +30,7 @@ export default function SearchPage() {
   useEffect(() => {
     const getMovies = async (page, prev) => {
       const res = await fetch(
-        `${process.env.search}movie?api_key=${process.env.TMDB_API_KEY}&query=${value}&page=${page}`
+        `${process.env.search}movie?api_key=${process.env.TMDB_API_KEY}&query=${value}&page=${page}&language=fr`
       );
       const data = await res.json();
       const results = [...prev, ...data.results];
